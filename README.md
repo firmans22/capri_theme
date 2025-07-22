@@ -1,41 +1,35 @@
-### Capri Theme
+# Capri Turquoise Theme for ERPNext
 
-1
+A beautiful custom theme for ERPNext featuring Capri blue and turquoise colors with modern gradients and smooth animations.
 
-### Installation
+## Features
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+- Modern gradient backgrounds (turquoise to grey)
+- Capri blue primary color scheme
+- Turquoise accents and dividers
+- Smooth hover effects and transitions
+- Enhanced button designs with gradients
+- Beautiful card and list item styling
+- Custom scrollbar design
+- Integrated with Frappe's theme switcher
 
+## Installation
+
+1. Create and install the app:
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app capri_theme
+bench new-app capri_theme
+bench --site [site-name] install-app capri_theme
+bench build --app capri_theme
+bench restart
 ```
 
-### Contributing
+2. Enable the theme through System Settings or the theme switcher in the user dropdown menu.
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+## Compatibility
 
-```bash
-cd apps/capri_theme
-pre-commit install
-```
+- Frappe Framework: v15.7+
+- ERPNext: v15.0+
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+## License
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
+MIT License
