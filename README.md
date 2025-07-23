@@ -13,11 +13,11 @@ A beautiful custom theme for ERPNext featuring Capri blue and turquoise colors w
 - Custom scrollbar design
 - Integrated with Frappe's theme switcher
 
-## Installation
+## Installation Steps
 
 1. Create and install the app:
 ```bash
-bench new-app capri_theme
+bench get-app https://github.com/firmans22/capri_theme
 bench --site [site-name] install-app capri_theme
 bench build --app capri_theme
 bench restart

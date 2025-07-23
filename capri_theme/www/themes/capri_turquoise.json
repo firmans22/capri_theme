@@ -1,0 +1,47 @@
+{
+    "name": "Capri Turquoise",
+    "custom": 1,
+    "theme_json": {
+        "light": {
+            "colors": {
+                "primary": "#00BFFF",
+                "primary-light": "#33CCFF",
+                "primary-dark": "#0099CC",
+                "secondary": "#40E0D0",
+                "secondary-light": "#66E6D8",
+                "secondary-dark": "#20B2AA",
+                "success": "#28A745",
+                "info": "#17A2B8",
+                "warning": "#FFC107",
+                "danger": "#DC3545",
+                "light": "#F8F9FA",
+                "dark": "#495057",
+                "muted": "#6C757D",
+                "white": "#FFFFFF",
+                "black": "#000000",
+                "gray-100": "#F8F9FA",
+                "gray-200": "#E9ECEF",
+                "gray-300": "#DEE2E6",
+                "gray-400": "#CED4DA",
+                "gray-500": "#ADB5BD",
+                "gray-600": "#6C757D",
+                "gray-700": "#495057",
+                "gray-800": "#343A40",
+                "gray-900": "#212529",
+                "background": "linear-gradient(135deg, #40E0D0, #B8B8B8)",
+                "sidebar-bg": "#F0FFFF",
+                "navbar-bg": "#00BFFF",
+                "card-bg": "#FFFFFF",
+                "border-color": "#40E0D0"
+            },
+            "fonts": {
+                "font-family-sans-serif": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+            },
+            "spacing": {
+                "border-radius": "6px",
+                "border-radius-sm": "4px",
+                "border-radius-lg": "8px"
+            }
+        }
+    }
+}

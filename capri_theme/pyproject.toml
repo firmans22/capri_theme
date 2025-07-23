@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "capri_theme"
 authors = [
-    {name = "firmans", email = "miftah@mykitchenindonesia.com"},
+    {name = "firmans", email = "miftah.mykitchenindonesia.com"},
 ]
 dynamic = ["version", "description"]
 readme = "README.md"
@@ -14,4 +14,4 @@ dependencies = [
 ]
 
 [project.urls]
-Home = "https://github.com/firmans22/capri_theme"
+Home = "https://github.com/yourusername/capri_theme"

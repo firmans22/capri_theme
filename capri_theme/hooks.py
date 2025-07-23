@@ -1,32 +1,31 @@
+from . import __version__ as app_version
+
 app_name = "capri_theme"
 app_title = "Capri Theme"
-app_publisher = "1"
-app_description = "1"
-app_email = "1@g.com"
-app_license = "mit"
-
-# Apps
-# ------------------
-
-# required_apps = []
-
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "capri_theme",
-# 		"logo": "/assets/capri_theme/logo.png",
-# 		"title": "Capri Theme",
-# 		"route": "/capri_theme",
-# 		"has_permission": "capri_theme.api.permission.has_app_permission"
-# 	}
-# ]
+app_publisher = "firmans"
+app_description = "Custom ERPNext theme with Capri and Turquoise colors"
+app_email = "miftah@mykitchenindonesia.com"
+app_license = "MIT"
+app_version = app_version
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/capri_theme/css/capri_theme.css"
-# app_include_js = "/assets/capri_theme/js/capri_theme.js"
+app_include_css = "/assets/capri_theme/css/capri_theme.css"
+app_include_js = "/assets/capri_theme/js/capri_theme.js"
+
+# Installation hooks
+# ------------------
+after_install = "capri_theme.capri_theme.utils.after_install"
+
+# Optional: Set default theme on login (comment out if causing issues)
+# on_login = "capri_theme.capri_theme.utils.set_default_theme"
+
+# Website context
+website_context = {
+    "brand_name": "mykitchen"
+}
 
 # include js, css files in header of web template
 # web_include_css = "/assets/capri_theme/css/capri_theme.css"
@@ -47,11 +46,6 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-
-# Svg Icons
-# ------------------
-# include app icons in desk
-# app_include_icons = "capri_theme/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -82,30 +76,13 @@ app_license = "mit"
 # Installation
 # ------------
 
-# before_install = "capri_theme.install.before_install"
-# after_install = "capri_theme.install.after_install"
+# before_install = "capri_theme.capri_theme.utils.before_install"
 
 # Uninstallation
 # ------------
 
 # before_uninstall = "capri_theme.uninstall.before_uninstall"
 # after_uninstall = "capri_theme.uninstall.after_uninstall"
-
-# Integration Setup
-# ------------------
-# To set up dependencies/integrations with other apps
-# Name of the app being installed is passed as an argument
-
-# before_app_install = "capri_theme.utils.before_app_install"
-# after_app_install = "capri_theme.utils.after_app_install"
-
-# Integration Cleanup
-# -------------------
-# To clean up dependencies/integrations with other apps
-# Name of the app being uninstalled is passed as an argument
-
-# before_app_uninstall = "capri_theme.utils.before_app_uninstall"
-# after_app_uninstall = "capri_theme.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
@@ -234,11 +211,3 @@ app_license = "mit"
 # auth_hooks = [
 # 	"capri_theme.auth.validate"
 # ]
-
-# Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
-
-# default_log_clearing_doctypes = {
-# 	"Logging DocType Name": 30  # days to retain logs
-# }
-
