@@ -38,19 +38,66 @@ frappe.ready(function() {
         });
     }
     
-    // Update text colors for dark mode
+    // Update text colors for dark mode - unselected text is black
     function updateTextForDarkMode() {
-        const textElements = document.querySelectorAll('p, span, div, label, h1, h2, h3, h4, h5, h6');
+        // Regular text elements - make them black
+        const textElements = document.querySelectorAll('p, span, div, label, .form-label, .control-label');
         textElements.forEach(element => {
-            if (!element.style.color && !element.classList.contains('text-primary')) {
-                element.style.color = '#e3f2fd'; // Light blue text
+            // Skip elements that should remain light blue
+            if (!element.closest('.sidebar-item.selected') && 
+                !element.closest('.btn') && 
+                !element.closest('.modal-title') &&
+                !element.closest('.page-title') &&
+                !element.closest('h1, h2, h3, h4, h5, h6') &&
+                !element.classList.contains('text-primary')) {
+                element.style.color = '#000000'; // Black for unselected text
             }
         });
         
-        // Special handling for muted text
+        // Headers and important elements remain light blue
+        const importantElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, .page-title, .widget-title');
+        importantElements.forEach(element => {
+            element.style.color = '#e3f2fd'; // Light blue for headers
+        });
+        
+        // Selected/active elements remain light blue
+        const selectedElements = document.querySelectorAll('.selected, .active, .sidebar-item.selected');
+        selectedElements.forEach(element => {
+            element.style.color = '#e3f2fd'; // Light blue for selected items
+        });
+        
+        // Form inputs get black text
+        const formInputs = document.querySelectorAll('input, textarea, select, .form-control');
+        formInputs.forEach(input => {
+            input.style.color = '#000000'; // Black text in form fields
+        });
+        
+        // Muted text becomes dark gray
         const mutedElements = document.querySelectorAll('.text-muted');
         mutedElements.forEach(element => {
-            element.style.color = '#90caf9'; // Light blue muted
+            element.style.color = '#333333'; // Dark gray for muted text
+        });
+        
+        // Table cells get black text
+        const tableCells = document.querySelectorAll('table td');
+        tableCells.forEach(cell => {
+            cell.style.color = '#000000'; // Black text in table cells
+        });
+        
+        // Add hover effects for text elements
+        textElements.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                if (this.style.color === 'rgb(0, 0, 0)') { // If currently black
+                    this.style.color = '#e3f2fd'; // Change to light blue on hover
+                    this.style.transition = 'color 0.3s ease';
+                }
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                if (!this.closest('.selected') && !this.closest('.active')) {
+                    this.style.color = '#000000'; // Back to black when not hovering
+                }
+            });
         });
     }
     
