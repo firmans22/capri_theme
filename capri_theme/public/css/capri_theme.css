@@ -640,18 +640,81 @@ table tr:hover td {
         box-shadow: 0 8px 25px rgba(26, 35, 126, 0.5) !important;
     }
     
-    /* Text colors */
+    /* Text colors - unselected text is black */
+    p, span, div, label, 
+    .form-label, .control-label,
+    .list-row-col, .grid-row-col,
+    .sidebar-item-label,
+    .navbar-text,
+    .dropdown-item {
+        color: #000000 !important; /* Black for unselected text */
+    }
+    
+    /* Selected/Active/Important text remains light blue */
     .page-title,
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--night-text) !important;
+    h1, h2, h3, h4, h5, h6,
+    .sidebar-item.selected,
+    .list-row.list-row--head,
+    .grid-row.grid-row--head,
+    .navbar .nav-link,
+    .btn,
+    .modal-title,
+    .widget-title,
+    .indicator,
+    .timeline-item,
+    .notification-item,
+    .active,
+    .selected {
+        color: var(--night-text) !important; /* Light blue for selected/active elements */
     }
     
-    p, span, div, label {
+    /* Hover states get light blue */
+    p:hover, span:hover, div:hover, label:hover,
+    .list-row:hover, .grid-row:hover,
+    .sidebar-item:hover,
+    .dropdown-item:hover {
         color: var(--night-text) !important;
+        transition: color 0.3s ease;
     }
     
+    /* Muted text stays muted but black-based */
     .text-muted {
-        color: var(--night-text-muted) !important;
+        color: #333333 !important; /* Dark gray instead of light blue */
+    }
+    
+    /* Input text is black for better readability */
+    .form-control,
+    .form-select,
+    input,
+    textarea,
+    select {
+        color: #000000 !important; /* Black text in form fields */
+    }
+    
+    /* Placeholder text */
+    .form-control::placeholder,
+    input::placeholder,
+    textarea::placeholder {
+        color: #666666 !important; /* Gray placeholder text */
+    }
+    
+    /* Table text - unselected is black */
+    table td {
+        color: #000000 !important; /* Black text in table cells */
+    }
+    
+    /* Table header text remains light blue */
+    table th {
+        color: var(--night-text) !important;
+    }
+    
+    /* Link text */
+    a {
+        color: var(--dark-blue-light) !important;
+    }
+    
+    a:hover {
+        color: var(--turquoise-light) !important;
     }
     
     /* Icons dark mode */
